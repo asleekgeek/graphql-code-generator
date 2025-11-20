@@ -1,5 +1,21 @@
 # @graphql-codegen/client-preset
 
+## 5.2.0
+
+### Minor Changes
+
+- [#10510](https://github.com/dotansimha/graphql-code-generator/pull/10510) [`9e70bcb`](https://github.com/dotansimha/graphql-code-generator/commit/9e70bcbf5390e815a6844f1965b04056e5d8e670) Thanks [@nickmessing](https://github.com/nickmessing)! - add importExtension configuration option
+
+### Patch Changes
+
+- Updated dependencies [[`9e70bcb`](https://github.com/dotansimha/graphql-code-generator/commit/9e70bcbf5390e815a6844f1965b04056e5d8e670)]:
+  - @graphql-codegen/gql-tag-operations@5.1.0
+  - @graphql-codegen/visitor-plugin-common@6.2.0
+  - @graphql-codegen/plugin-helpers@6.1.0
+  - @graphql-codegen/typescript-operations@5.0.5
+  - @graphql-codegen/typed-document-node@6.1.3
+  - @graphql-codegen/typescript@5.0.5
+
 ## 5.1.3
 
 ### Patch Changes
