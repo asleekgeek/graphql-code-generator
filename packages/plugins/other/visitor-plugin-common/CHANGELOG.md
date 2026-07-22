@@ -1,5 +1,14 @@
 # @graphql-codegen/visitor-plugin-common
 
+## 7.2.2
+
+### Patch Changes
+
+- [#10899](https://github.com/dotansimha/graphql-code-generator/pull/10899)
+  [`e7a1451`](https://github.com/dotansimha/graphql-code-generator/commit/e7a1451bb2ccf201c61ebc9cc83a46740b5d1be9)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - Fix conditional directive (`@skip` and
+  `@include`) incorrectly drop fields in Result when used on Inline Fragment / Fragment Spread
+
 ## 7.2.1
 
 ### Patch Changes
