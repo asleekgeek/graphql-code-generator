@@ -1,5 +1,17 @@
 # @graphql-codegen/client-preset
 
+## 6.2.0
+
+### Minor Changes
+
+- [#10946](https://github.com/dotansimha/graphql-code-generator/pull/10946)
+  [`a6a3348`](https://github.com/dotansimha/graphql-code-generator/commit/a6a334871f7b3ea6b6fafe3a4db432c37e19381b)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - Add `skipIndexFile` preset config option to
+  `client-preset` to allow disabling generation of the `index.ts` barrel file that re-exports the
+  other generated files. Defaults to `false` (unchanged behavior); set to `true` to skip generating
+  `index.ts`, for example when your project avoids barrel files for tree-shaking or lint rule
+  reasons.
+
 ## 6.1.3
 
 ### Patch Changes
