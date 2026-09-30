@@ -1,5 +1,31 @@
 # @graphql-codegen/typescript
 
+## 6.1.1
+
+### Patch Changes
+
+- [#11014](https://github.com/dotansimha/graphql-code-generator/pull/11014)
+  [`7a376ef`](https://github.com/dotansimha/graphql-code-generator/commit/7a376effc2dcb7ac8decaf53c2c18eb0e28e71e6)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - Fix type errors in `typescript` under
+  `strict: true` by typing the shared visitor methods it overrides:
+  - `@graphql-codegen/visitor-plugin-common`: adds `NormalizedDeclarationKindConfig` (every
+    declaration kind set), used by `normalizeDeclarationKind`, `DEFAULT_DECLARATION_KINDS` and
+    `ParsedTypesConfig.declarationKind`. `BaseTypesVisitor`'s `NamedType`, `ListType`,
+    `FieldDefinition`, `InputValueDefinition` and `UnionTypeDefinition` have typed visitor params
+    (`key` and `parent` are required, since the visitor always passes them), and
+    `ObjectTypeDefinition`, `EnumTypeDefinition` and `DirectiveDefinition` may return `null`.
+  - `@graphql-codegen/typescript`: skips document files without a `document` when collecting
+    introspection types, types the `TsVisitor` visitor params, and `TsVisitor.EnumTypeDefinition`
+    may return `null` like the introspection visitor's override.
+
+  Generated output is unchanged.
+
+- Updated dependencies
+  [[`1f7566f`](https://github.com/dotansimha/graphql-code-generator/commit/1f7566f0bead301b21d4f7da49a4bc6924d07ef3),
+  [`7a376ef`](https://github.com/dotansimha/graphql-code-generator/commit/7a376effc2dcb7ac8decaf53c2c18eb0e28e71e6)]:
+  - @graphql-codegen/visitor-plugin-common@7.2.8
+  - @graphql-codegen/plugin-helpers@7.4.1
+
 ## 6.1.0
 
 ### Minor Changes
