@@ -1,5 +1,24 @@
 # @graphql-codegen/plugin-helpers
 
+## 7.4.1
+
+### Patch Changes
+
+- [#11009](https://github.com/dotansimha/graphql-code-generator/pull/11009)
+  [`1f7566f`](https://github.com/dotansimha/graphql-code-generator/commit/1f7566f0bead301b21d4f7da49a4bc6924d07ef3)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - Fix type errors in `typescript-operations`
+  under `strict: true` by widening the shared types it calls into:
+  - `@graphql-codegen/plugin-helpers`: `Types.ComplexPluginOutput`'s `prepend` and `append` now
+    accept `null` items. Core already skipped them.
+  - `@graphql-codegen/visitor-plugin-common`: `DeclarationBlock.withComment` accepts `undefined`,
+    `parseEnumValues`'s `mapOrStr` is optional (it already defaulted to `{}`),
+    `ImportSource.namespace` accepts `null`, and `optimizeOperations`'s `includeFragments` is
+    optional.
+  - `@graphql-codegen/typescript-operations`: skips document files without a `document`, and no
+    longer throws when called without the plugin info argument.
+
+  Generated output is unchanged.
+
 ## 7.4.0
 
 ### Minor Changes

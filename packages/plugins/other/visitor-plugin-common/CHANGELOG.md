@@ -1,5 +1,44 @@
 # @graphql-codegen/visitor-plugin-common
 
+## 7.2.8
+
+### Patch Changes
+
+- [#11009](https://github.com/dotansimha/graphql-code-generator/pull/11009)
+  [`1f7566f`](https://github.com/dotansimha/graphql-code-generator/commit/1f7566f0bead301b21d4f7da49a4bc6924d07ef3)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - Fix type errors in `typescript-operations`
+  under `strict: true` by widening the shared types it calls into:
+  - `@graphql-codegen/plugin-helpers`: `Types.ComplexPluginOutput`'s `prepend` and `append` now
+    accept `null` items. Core already skipped them.
+  - `@graphql-codegen/visitor-plugin-common`: `DeclarationBlock.withComment` accepts `undefined`,
+    `parseEnumValues`'s `mapOrStr` is optional (it already defaulted to `{}`),
+    `ImportSource.namespace` accepts `null`, and `optimizeOperations`'s `includeFragments` is
+    optional.
+  - `@graphql-codegen/typescript-operations`: skips document files without a `document`, and no
+    longer throws when called without the plugin info argument.
+
+  Generated output is unchanged.
+
+- [#11014](https://github.com/dotansimha/graphql-code-generator/pull/11014)
+  [`7a376ef`](https://github.com/dotansimha/graphql-code-generator/commit/7a376effc2dcb7ac8decaf53c2c18eb0e28e71e6)
+  Thanks [@eddeee888](https://github.com/eddeee888)! - Fix type errors in `typescript` under
+  `strict: true` by typing the shared visitor methods it overrides:
+  - `@graphql-codegen/visitor-plugin-common`: adds `NormalizedDeclarationKindConfig` (every
+    declaration kind set), used by `normalizeDeclarationKind`, `DEFAULT_DECLARATION_KINDS` and
+    `ParsedTypesConfig.declarationKind`. `BaseTypesVisitor`'s `NamedType`, `ListType`,
+    `FieldDefinition`, `InputValueDefinition` and `UnionTypeDefinition` have typed visitor params
+    (`key` and `parent` are required, since the visitor always passes them), and
+    `ObjectTypeDefinition`, `EnumTypeDefinition` and `DirectiveDefinition` may return `null`.
+  - `@graphql-codegen/typescript`: skips document files without a `document` when collecting
+    introspection types, types the `TsVisitor` visitor params, and `TsVisitor.EnumTypeDefinition`
+    may return `null` like the introspection visitor's override.
+
+  Generated output is unchanged.
+
+- Updated dependencies
+  [[`1f7566f`](https://github.com/dotansimha/graphql-code-generator/commit/1f7566f0bead301b21d4f7da49a4bc6924d07ef3)]:
+  - @graphql-codegen/plugin-helpers@7.4.1
+
 ## 7.2.7
 
 ### Patch Changes
